@@ -1,0 +1,10 @@
+# window-decoration=false
+gtk-titlebar=false
+
+keybind = ctrl+shift+k=goto_split:top
+keybind = ctrl+shift+h=goto_split:left
+keybind = ctrl+shift+j=goto_split:bottom
+keybind = ctrl+shift+l=goto_split:right
+#keybind = f11:toggle_fullscreen
+
+
