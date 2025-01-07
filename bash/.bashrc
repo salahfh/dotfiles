@@ -17,5 +17,7 @@ eval $(opam env)
 
 # Add git to the prompt
 . ~/.git-prompt.sh
+. ~/.command-shortcuts.sh
+
 # PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 PROMPT_COMMAND='__git_ps1 "[\u@\h \w" "]\$ "'
