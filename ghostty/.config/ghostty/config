@@ -8,8 +8,14 @@ mouse-hide-while-typing = true
 gtk-titlebar=false
 
 # Keymappings
+## Splitting windows
 keybind = ctrl+shift+k=goto_split:top
 keybind = ctrl+shift+h=goto_split:left
 keybind = ctrl+shift+j=goto_split:bottom
 keybind = ctrl+shift+l=goto_split:right
+## Resizing split windows
+keybind = super+ctrl+shift+k=resize_split:up,10
+keybind = super+ctrl+shift+h=resize_split:left,10
+keybind = super+ctrl+shift+j=resize_split:down,10
+keybind = super+ctrl+shift+l=resize_split:right,10
 keybind = f11=toggle_fullscreen
