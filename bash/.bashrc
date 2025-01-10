@@ -19,5 +19,12 @@ eval $(opam env)
 . ~/.git-prompt.sh
 . ~/.command-shortcuts.sh
 
-# PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+# Git
 PROMPT_COMMAND='__git_ps1 "[\u@\h \w" "]\$ "'
+
+# fzf
+eval "$(fzf --bash)"
+
+## fzf with pacman
+alias pzi="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+alias pzr="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
