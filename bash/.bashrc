@@ -10,6 +10,7 @@ alias la='ls -a --color=auto'
 alias ll='ls -l --color=auto'
 alias vi='nvim'
 alias vim='nvim'
+alias cat='bat'
 # PS1='[\u@\h \W]\$ '
 . "$HOME/.cargo/env"
 
