@@ -1,3 +1,10 @@
 [user]
 	name = Saoud Salah Eddine
 	email = salah_fh@outlook.com
+
+[alias]
+  fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
+
+[rebase]
+  autosquash = true
+
