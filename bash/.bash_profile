@@ -13,3 +13,4 @@
 # This section can be safely removed at any time if needed.
 test -r '/home/salah/.opam/opam-init/init.sh' && . '/home/salah/.opam/opam-init/init.sh' > /dev/null 2> /dev/null || true
 # END opam configuration
+. "/home/salah/.deno/env"

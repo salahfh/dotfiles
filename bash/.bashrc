@@ -29,3 +29,6 @@ eval "$(fzf --bash)"
 ## fzf with pacman
 alias pzi="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
 alias pzr="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
+alias activate=". .venv/bin/activate"
+. "/home/salah/.deno/env"
+[ -f "/home/salah/.ghcup/env" ] && . "/home/salah/.ghcup/env" # ghcup-env
