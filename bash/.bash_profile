@@ -14,4 +14,4 @@ test -r '/home/salah/.opam/opam-init/init.sh' && . '/home/salah/.opam/opam-init/
 # END opam configuration
 . "/home/salah/.deno/env"
 
-export PATH='/home/salah/.duckdb/cli/latest':'/home/salah/bin':$PATH
+export PATH='/home/salah/.duckdb/cli/latest':'/home/salah/bin/fasm':$PATH
