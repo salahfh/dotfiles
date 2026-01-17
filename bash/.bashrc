@@ -32,3 +32,5 @@ alias pzr="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo 
 alias activate=". .venv/bin/activate"
 . "/home/salah/.deno/env"
 [ -f "/home/salah/.ghcup/env" ] && . "/home/salah/.ghcup/env" # ghcup-env
+
+export HISTCONTROL=ignoreboth:erasedups
