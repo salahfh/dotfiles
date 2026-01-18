@@ -26,3 +26,9 @@ vim.keymap.set('n', '<leader>st', function()
     vim.api.nvim_win_set_height(0, 10)
     vim.cmd.startinsert()
 end )
+
+-- Split
+vim.keymap.set('n', '|', function() 
+  vim.cmd.vsplit()
+  vim.cmd.wincmd('l')
+end)
