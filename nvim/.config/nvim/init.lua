@@ -14,3 +14,5 @@ vim.opt.smartindent = true
 vim.opt.autoindent = true
 
 vim.opt.termguicolors = true
+
+
