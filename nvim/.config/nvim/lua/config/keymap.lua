@@ -31,6 +31,11 @@ end )
 vim.keymap.set('n', '|', function() 
   vim.cmd.vsplit()
   vim.cmd.wincmd('l')
-  vim.opt_local.number = false;
-  vim.opt_local.relativenumber = false;
+  vim.api.nvim_win_set_width(0, 70)
+  vim.opt_local.number = false
+  vim.opt_local.relativenumber = false
 end)
+
+
+-- Refresh config
+vim.keymap.set('n', '<leader>r', "<cmd>source %<CR>")
