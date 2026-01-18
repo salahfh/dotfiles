@@ -34,5 +34,5 @@ require("lazy").setup({
   checker = { enabled = false },
 })
 
-require('gitsigns').setup()
-require('Comment').setup()
+require('gitsigns')
+require('Comment')
