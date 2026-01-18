@@ -35,3 +35,4 @@ require("lazy").setup({
 })
 
 require('gitsigns').setup()
+require('Comment').setup()
