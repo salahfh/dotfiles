@@ -31,4 +31,6 @@ end )
 vim.keymap.set('n', '|', function() 
   vim.cmd.vsplit()
   vim.cmd.wincmd('l')
+  vim.opt_local.number = false;
+  vim.opt_local.relativenumber = false;
 end)
