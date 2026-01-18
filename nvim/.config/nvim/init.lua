@@ -13,8 +13,7 @@ vim.opt.autoindent = true
 
 vim.opt.termguicolors = true
 
--- Look
--- Show line numbers
+-- line numbers
 vim.opt.relativenumber = true
 vim.o.cursorline = true
 vim.o.cursorlineopt = "number"

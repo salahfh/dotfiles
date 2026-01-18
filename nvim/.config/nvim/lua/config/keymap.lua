@@ -17,3 +17,12 @@ end, { desc = "Find config files" })
 local gitsigns = require('gitsigns')
 vim.keymap.set('n', '<leader>gd', gitsigns.toggle_deleted, { desc = 'Toggle git sign' })
 
+-- Terminal 
+-- Start a mini termial - useful for quick git operations
+vim.keymap.set('n', '<leader>st', function() 
+    vim.cmd.vnew()
+    vim.cmd.term()
+    vim.cmd.wincmd("J")
+    vim.api.nvim_win_set_height(0, 10)
+    vim.cmd.startinsert()
+end )
