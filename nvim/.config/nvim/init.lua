@@ -34,4 +34,7 @@ vim.api.nvim_create_autocmd("BufWritePre",
     end
   })
 
+
+-- Enabled LSPs
 vim.lsp.enable("ty")
+vim.lsp.enable("ruff")
