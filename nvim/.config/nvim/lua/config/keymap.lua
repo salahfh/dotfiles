@@ -17,18 +17,18 @@ end, { desc = "Find config files" })
 local gitsigns = require('gitsigns')
 vim.keymap.set('n', '<leader>gd', gitsigns.toggle_deleted, { desc = 'Toggle git sign' })
 
--- Terminal 
+-- Terminal
 -- Start a mini termial - useful for quick git operations
-vim.keymap.set('n', '<leader>st', function() 
-    vim.cmd.vnew()
-    vim.cmd.term()
-    vim.cmd.wincmd("J")
-    vim.api.nvim_win_set_height(0, 10)
-    vim.cmd.startinsert()
-end )
+vim.keymap.set('n', '<leader>st', function()
+  vim.cmd.vnew()
+  vim.cmd.term()
+  vim.cmd.wincmd("J")
+  vim.api.nvim_win_set_height(0, 10)
+  vim.cmd.startinsert()
+end)
 
 -- Split
-vim.keymap.set('n', '|', function() 
+vim.keymap.set('n', '|', function()
   vim.cmd.vsplit()
   vim.cmd.wincmd('l')
   vim.api.nvim_win_set_width(0, 70)
@@ -41,7 +41,7 @@ end)
 vim.keymap.set('n', '<leader>r', "<cmd>source %<CR>")
 
 
--- Clean after a search 
+-- Clean after a search
 vim.api.nvim_set_keymap('n', '<Esc>', ':noh<CR>', { noremap = true, silent = true })
 
 
@@ -58,5 +58,4 @@ vim.keymap.set('n', 'K', function()
     border = 'rounded',
     title = '',
   }
-
 end, { desc = 'Customize the hover for the lsp' })
