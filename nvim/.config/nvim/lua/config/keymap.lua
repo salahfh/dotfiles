@@ -39,3 +39,7 @@ end)
 
 -- Refresh config
 vim.keymap.set('n', '<leader>r', "<cmd>source %<CR>")
+
+
+-- Clean after a search 
+vim.api.nvim_set_keymap('n', '<Esc>', ':noh<CR>', { noremap = true, silent = true })
