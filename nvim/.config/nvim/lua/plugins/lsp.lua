@@ -20,12 +20,12 @@ return {
           },
           workspace = {
             library = {
-              vim.env.VIMRUNTIME,  
-              vim.fn.stdpath('config'),  
+              vim.env.VIMRUNTIME,
+              vim.fn.stdpath('config'),
             },
           },
           runtime = {
-            version = 'LuaJIT',  
+            version = 'LuaJIT',
           },
         },
       },
