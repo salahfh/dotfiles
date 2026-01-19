@@ -22,3 +22,14 @@ local linenumber_color = "#A281D8"
 vim.api.nvim_set_hl(0, 'LineNr', { fg = linenumber_color })
 vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = linenumber_color })
 vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = linenumber_color })
+
+
+-- Format on save
+local languages = { "*.lua", "*.py" }
+vim.api.nvim_create_autocmd("BufWritePre",
+  {
+    pattern = languages,
+    callback = function()
+      vim.lsp.buf.format({ async = true })
+    end
+  })
