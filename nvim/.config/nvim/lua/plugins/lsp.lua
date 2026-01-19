@@ -12,24 +12,4 @@ return {
       },
     },
   },
-  config = function()
-    require("lspconfig").lua_ls.setup {
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = { 'vim' },
-          },
-          workspace = {
-            library = {
-              vim.env.VIMRUNTIME,
-              vim.fn.stdpath('config'),
-            },
-          },
-          runtime = {
-            version = 'LuaJIT',
-          },
-        },
-      },
-    }
-  end
 }
