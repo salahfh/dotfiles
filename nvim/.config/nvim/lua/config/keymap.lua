@@ -43,3 +43,20 @@ vim.keymap.set('n', '<leader>r', "<cmd>source %<CR>")
 
 -- Clean after a search 
 vim.api.nvim_set_keymap('n', '<Esc>', ':noh<CR>', { noremap = true, silent = true })
+
+
+-- Cusomize the hover option
+local lsp_window_width = vim.api.nvim_win_get_width(0)
+local lsp_window_height = math.floor(vim.api.nvim_win_get_height(0) * .4)
+
+vim.keymap.set('n', 'K', function()
+  vim.lsp.buf.hover {
+    height = lsp_window_height,
+    width = lsp_window_width,
+    max_height = lsp_window_height,
+    offset_y = 100,
+    border = 'rounded',
+    title = '',
+  }
+
+end, { desc = 'Customize the hover for the lsp' })
