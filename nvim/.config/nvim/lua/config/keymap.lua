@@ -41,6 +41,7 @@ end)
 vim.keymap.set('n', '<leader>r', "<cmd>source %<CR>")
 
 
+
 -- Clean after a search
 vim.api.nvim_set_keymap('n', '<Esc>', ':noh<CR>', { noremap = true, silent = true })
 
@@ -59,3 +60,8 @@ vim.keymap.set('n', 'K', function()
     title = '',
   }
 end, { desc = 'Customize the hover for the lsp' })
+
+
+vim.keymap.set('n', '<leader>hl', function()
+  vim.cmd.checkhealth "vim.lsp"
+end, { desc = "Check LSP Health" })

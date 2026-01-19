@@ -25,7 +25,7 @@ vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = linenumber_color })
 
 
 -- Format on save
-local languages = { "*.lua" }
+local languages = { "*.lua", "*.py" }
 vim.api.nvim_create_autocmd("BufWritePre",
   {
     pattern = languages,
@@ -33,3 +33,5 @@ vim.api.nvim_create_autocmd("BufWritePre",
       vim.lsp.buf.format({ async = true })
     end
   })
+
+vim.lsp.enable("ty")
