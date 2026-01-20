@@ -57,7 +57,6 @@ local floating_window_bottom = {
   max_height = lsp_window_height,
   offset_y = 100,
   border = 'rounded',
-  title = '',
 }
 
 vim.keymap.set('n', 'K', function()

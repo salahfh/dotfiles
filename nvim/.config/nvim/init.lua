@@ -31,12 +31,12 @@ vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = linenumber_color })
 -- Format on save
 local languages = { "*.lua", "*.py" }
 vim.api.nvim_create_autocmd("BufWritePre",
-    {
-        pattern = languages,
-        callback = function()
-            vim.lsp.buf.format({ async = true })
-        end
-    })
+  {
+    pattern = languages,
+    callback = function()
+      vim.lsp.buf.format({ async = true })
+    end
+  })
 
 
 -- Enabled LSPs
