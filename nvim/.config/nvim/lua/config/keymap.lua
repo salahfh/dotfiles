@@ -46,6 +46,7 @@ vim.keymap.set('n', '<leader>r', "<cmd>source %<CR>")
 vim.api.nvim_set_keymap('n', '<Esc>', ':noh<CR>', { noremap = true, silent = true })
 
 
+-- LSP Settings
 -- Cusomize the hover option
 local lsp_window_width = vim.api.nvim_win_get_width(0)
 local lsp_window_height = math.floor(vim.api.nvim_win_get_height(0) * .4)
@@ -66,7 +67,7 @@ end, { desc = 'Customize the hover for the lsp' })
 
 vim.keymap.set('n', '<leader>gd', function()
   vim.diagnostic.open_float(floating_window_bottom)
-end)
+end, { desc = 'Customize the diagnostics float window' })
 
 vim.keymap.set('n', '<leader>hl', function()
   vim.cmd.checkhealth "vim.lsp"

@@ -13,6 +13,10 @@ vim.opt.autoindent = true
 
 vim.opt.termguicolors = true
 
+
+-- Scroll Options
+vim.opt.scrolloff = 15
+
 -- line numbers
 vim.opt.relativenumber = true
 vim.o.cursorline = true
@@ -27,12 +31,12 @@ vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = linenumber_color })
 -- Format on save
 local languages = { "*.lua", "*.py" }
 vim.api.nvim_create_autocmd("BufWritePre",
-  {
-    pattern = languages,
-    callback = function()
-      vim.lsp.buf.format({ async = true })
-    end
-  })
+    {
+        pattern = languages,
+        callback = function()
+            vim.lsp.buf.format({ async = true })
+        end
+    })
 
 
 -- Enabled LSPs
