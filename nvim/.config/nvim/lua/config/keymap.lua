@@ -50,17 +50,23 @@ vim.api.nvim_set_keymap('n', '<Esc>', ':noh<CR>', { noremap = true, silent = tru
 local lsp_window_width = vim.api.nvim_win_get_width(0)
 local lsp_window_height = math.floor(vim.api.nvim_win_get_height(0) * .4)
 
+local floating_window_bottom = {
+  height = lsp_window_height,
+  width = lsp_window_width,
+  max_height = lsp_window_height,
+  offset_y = 100,
+  border = 'rounded',
+  title = '',
+}
+
 vim.keymap.set('n', 'K', function()
-  vim.lsp.buf.hover {
-    height = lsp_window_height,
-    width = lsp_window_width,
-    max_height = lsp_window_height,
-    offset_y = 100,
-    border = 'rounded',
-    title = '',
-  }
+  vim.lsp.buf.hover(floating_window_bottom)
 end, { desc = 'Customize the hover for the lsp' })
 
+
+vim.keymap.set('n', '<leader>gd', function()
+  vim.diagnostic.open_float(floating_window_bottom)
+end)
 
 vim.keymap.set('n', '<leader>hl', function()
   vim.cmd.checkhealth "vim.lsp"

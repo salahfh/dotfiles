@@ -3,6 +3,7 @@
 return {
   "neovim/nvim-lspconfig",
   event = "VeryLazy",
+  filetype = "lua",
   dependancies = {
     "folke/lazydev.nvim",
     ft = "lua", -- only load on lua files
