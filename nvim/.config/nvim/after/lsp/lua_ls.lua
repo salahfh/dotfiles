@@ -1,6 +1,6 @@
 return {
   cmd = { "lua-language-server" },
-  filetype = { "lua" },
+  filetype = { "*.lua" },
   settings = {
     Lua = {
       diagnostics = {

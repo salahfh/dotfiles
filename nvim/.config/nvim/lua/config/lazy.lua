@@ -37,3 +37,4 @@ require("lazy").setup({
 require('gitsigns')
 require('Comment')
 require('trim')
+require('lualine').setup()
