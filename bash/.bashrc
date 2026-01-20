@@ -11,6 +11,8 @@ alias ll='ls -l --color=auto'
 alias vi='nvim'
 alias vim='nvim'
 alias cat='bat'
+alias focus='rfkill block wlan; echo "Focus Mode is ON"'
+alias unfocus='rfkill unblock wlan'
 # PS1='[\u@\h \W]\$ '
 . "$HOME/.cargo/env"
 
