@@ -15,7 +15,7 @@ vim.opt.termguicolors = true
 
 
 -- Scroll Options
-vim.opt.scrolloff = 15
+-- vim.opt.scrolloff = 15
 
 -- line numbers
 vim.opt.relativenumber = true
