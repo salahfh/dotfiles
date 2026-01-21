@@ -46,6 +46,11 @@ vim.keymap.set('n', '<leader>r', "<cmd>source %<CR>")
 vim.api.nvim_set_keymap('n', '<Esc>', ':noh<CR>', { noremap = true, silent = true })
 
 
+-- QuickFix
+vim.keymap.set('n', '<leader>qo', vim.cmd.copen, { desc = "Open the quickfix list" })
+vim.keymap.set('n', '<leader>qc', vim.cmd.cclose, { desc = "Close the quickfix list" })
+
+
 -- LSP Settings
 -- Cusomize the hover option
 local lsp_window_width = vim.api.nvim_win_get_width(0)
