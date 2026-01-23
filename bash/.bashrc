@@ -7,7 +7,7 @@
 
 alias ls='ls --color=auto'
 alias la='ls -a --color=auto'
-alias ll='ls -l --color=auto'
+alias ll='ls -hl --color=auto'
 alias vi='nvim'
 alias vim='nvim'
 alias cat='bat'
