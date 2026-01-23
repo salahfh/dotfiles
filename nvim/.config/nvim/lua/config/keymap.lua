@@ -27,6 +27,15 @@ vim.keymap.set('n', '<leader>st', function()
   vim.cmd.startinsert()
 end)
 
+-- Change to normal mode
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { noremap = true, desc = 'Remap escape in terminal mode' })
+
+-- Move to the above windod
+vim.keymap.set('t', '<Esc><Esc>', function()
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-\\><C-n>", true, true, true), 'n', true)
+  vim.cmd.wincmd("k")
+end, { noremap = true, desc = 'Leave terminal Open and Move cursor UP' })
+
 -- Split
 vim.keymap.set('n', '|', function()
   vim.cmd.vsplit()
