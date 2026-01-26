@@ -20,5 +20,6 @@ keybind = super+ctrl+shift+j=resize_split:down,10
 keybind = super+ctrl+shift+l=resize_split:right,10
 keybind = f11=toggle_fullscreen
 
-# Font 
+# Font
 font-size = 11
+font-family = "Fira Code Light"
