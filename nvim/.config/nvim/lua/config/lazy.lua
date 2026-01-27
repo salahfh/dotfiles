@@ -32,9 +32,21 @@ require("lazy").setup({
   checker = { enabled = false },
 })
 
+
 require('gitsigns')
 require('Comment')
 require('trim')
 require('lualine').setup()
 require('mason').setup()
-require('tiny-inline-diagnostic')
+require('tiny-inline-diagnostic').setup({
+  preset = "minimal",
+  options = {
+    add_messages = {
+      display_count = true,
+    },
+    multilines = {
+      enabled = true,
+    },
+  },
+}
+)

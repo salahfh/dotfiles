@@ -30,11 +30,6 @@ end)
 -- Change to normal mode
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { noremap = true, desc = 'Remap escape in terminal mode' })
 
--- Move to the above windod
-vim.keymap.set({ 't', 'n' }, '<Esc><Esc>', function()
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-\\><C-n>", true, true, true), 'n', true)
-  vim.cmd.wincmd("k")
-end, { noremap = true, desc = 'Leave terminal Open and Move cursor UP' })
 
 -- Split
 vim.keymap.set('n', '|', function()
@@ -85,3 +80,20 @@ end, { desc = 'Customize the diagnostics float window' })
 vim.keymap.set('n', '<leader>hl', function()
   vim.cmd.checkhealth "vim.lsp"
 end, { desc = "Check LSP Health" })
+
+
+-- Diagnostics
+vim.keymap.set("n", "<leader>de", "<cmd>TinyInlineDiag enable<cr>", { desc = "Enable diagnostics" })
+vim.keymap.set("n", "<leader>dd", "<cmd>TinyInlineDiag disable<cr>", { desc = "Disable diagnostics" })
+vim.keymap.set("n", "<leader>dt", "<cmd>TinyInlineDiag toggle<cr>", { desc = "Toggle diagnostics" })
+
+
+-- These GLOBAL keymaps are created unconditionally when Nvim starts:
+-- - "grn" is mapped in Normal mode to |vim.lsp.buf.rename()|
+-- - "gra" is mapped in Normal and Visual mode to |vim.lsp.buf.code_action()|
+-- - "grr" is mapped in Normal mode to |vim.lsp.buf.references()|
+-- - "gri" is mapped in Normal mode to |vim.lsp.buf.implementation()|
+-- - "grt" is mapped in Normal mode to |vim.lsp.buf.type_definition()|
+-- - "gO" is mapped in Normal mode to |vim.lsp.buf.document_symbol()|
+-- - CTRL-S is mapped in Insert mode to |vim.lsp.buf.signature_help()|
+--
