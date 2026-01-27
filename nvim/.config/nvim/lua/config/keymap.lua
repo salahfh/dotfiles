@@ -78,10 +78,9 @@ vim.keymap.set('n', 'K', function()
   vim.lsp.buf.hover(floating_window_bottom)
 end, { desc = 'Customize the hover for the lsp' })
 
-
-vim.keymap.set('n', '<leader>gd', function()
+vim.keymap.set('n', '<C-w>d', function()
   vim.diagnostic.open_float(floating_window_bottom)
-end, { desc = 'Customize the diagnostics float window' })
+end, { desc = 'Customize the diagnostics float window', remap = false })
 
 vim.keymap.set('n', '<leader>hl', function()
   vim.cmd.checkhealth "vim.lsp"
