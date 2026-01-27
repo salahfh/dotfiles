@@ -39,7 +39,10 @@ require('trim')
 require('lualine').setup()
 require('mason').setup()
 require('tiny-inline-diagnostic').setup({
-  preset = "minimal",
+  preset = "powerline",
+  hi = {
+    mixing_color = "None", -- Color to blend background with (or "None")
+  },
   options = {
     add_messages = {
       display_count = true,
