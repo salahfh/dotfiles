@@ -1,3 +1,5 @@
+local lsp_general = require("custom.lsp_general")
+
 return {
   cmd = { "ty", "server" },
   filetypes = { "python" },
@@ -24,4 +26,5 @@ return {
     logFile = "/tmp/ty.log",
     logLevel = "info",
   },
+  on_attach = lsp_general.on_attach,
 }

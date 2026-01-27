@@ -1,3 +1,5 @@
+local lsp_general = require("custom.lsp_general")
+
 return {
   cmd = { "lua-language-server" },
   filetypes = { "lua" },
@@ -17,4 +19,5 @@ return {
       },
     },
   },
+  on_attach = lsp_general.on_attach,
 }
