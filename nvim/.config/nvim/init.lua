@@ -11,21 +11,17 @@ vim.opt.softtabstop = 0
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 
+
+-- Color Scheme options
 vim.opt.termguicolors = true
+vim.g.background = 'dark'
+vim.g.gruvbox_material_background = 'soft'
 
-
--- Scroll Options
--- vim.opt.scrolloff = 15
 
 -- line numbers
 vim.opt.relativenumber = true
 vim.o.cursorline = true
 vim.o.cursorlineopt = "number"
-
-local linenumber_color = "#A281D8"
-vim.api.nvim_set_hl(0, 'LineNr', { fg = linenumber_color })
-vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = linenumber_color })
-vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = linenumber_color })
 
 
 -- Format on save
