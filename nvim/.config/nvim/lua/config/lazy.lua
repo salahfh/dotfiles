@@ -38,6 +38,7 @@ require('Comment')
 require('trim')
 require('lualine').setup()
 require('mason').setup()
+require('nvim-treesitter')
 require('tiny-inline-diagnostic').setup({
   preset = "powerline",
   hi = {
