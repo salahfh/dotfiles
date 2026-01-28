@@ -102,3 +102,9 @@ vim.keymap.set("n", "<leader>dt", "<cmd>TinyInlineDiag toggle<cr>", { desc = "To
 -- - "gO" is mapped in Normal mode to |vim.lsp.buf.document_symbol()|
 -- - CTRL-S is mapped in Insert mode to |vim.lsp.buf.signature_help()|
 --
+
+-- Show the git graph
+vim.keymap.set("n", "<leader>gl", function()
+  require('gitgraph').draw({}, { all = true, max_count = 5000 })
+end
+, { desc = "GitGraph - Draw", })
