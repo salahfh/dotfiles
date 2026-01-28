@@ -1,10 +1,13 @@
 -- Telescope
 local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ft', "<CMD>Telescope<CR>", { desc = 'Telescope main menu' })
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Telescope Vim keymaps' })
+vim.keymap.set('n', '<leader>fc', builtin.git_commits, { desc = 'Telescope git commits keymaps' })
+vim.keymap.set('n', '<leader>fm', builtin.git_branches, { desc = 'Telescope git branches keymaps' })
 vim.keymap.set("n", "<leader>fn", function()
   builtin.find_files({
     cwd = vim.fn.stdpath("config"),
@@ -17,6 +20,7 @@ end, { desc = "Find config files" })
 local gitsigns = require('gitsigns')
 vim.keymap.set('n', '<leader>gd', gitsigns.toggle_deleted, { desc = 'Toggle git sign' })
 
+
 -- Terminal
 -- Start a mini termial - useful for quick git operations
 vim.keymap.set('n', '<leader>st', function()
@@ -27,8 +31,10 @@ vim.keymap.set('n', '<leader>st', function()
   vim.cmd.startinsert()
 end)
 
+
 -- Change to normal mode
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { noremap = true, desc = 'Remap escape in terminal mode' })
+
 
 --  See `:help wincmd` for a list of all window commands
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
@@ -49,7 +55,6 @@ end)
 
 -- Refresh config
 vim.keymap.set('n', '<leader>r', "<cmd>source %<CR>")
-
 
 
 -- Clean after a search
@@ -101,7 +106,7 @@ vim.keymap.set("n", "<leader>dt", "<cmd>TinyInlineDiag toggle<cr>", { desc = "To
 -- - "grt" is mapped in Normal mode to |vim.lsp.buf.type_definition()|
 -- - "gO" is mapped in Normal mode to |vim.lsp.buf.document_symbol()|
 -- - CTRL-S is mapped in Insert mode to |vim.lsp.buf.signature_help()|
---
+
 
 -- Show the git graph
 vim.keymap.set("n", "<leader>gl", function()
