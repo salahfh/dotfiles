@@ -44,7 +44,7 @@ return {
       map('n', '<leader>hS', gitsigns.stage_buffer)
       map('n', '<leader>hR', gitsigns.reset_buffer)
       map('n', '<leader>hp', gitsigns.preview_hunk)
-      map('n', '<leader>hi', gitsigns.preview_hunk_inline)
+      map('n', '<leader>hi', gitsigns.preview_hunk_inline, {desc = 'Gitsign: Preview one line'})
 
       map('n', '<leader>hb', function()
         gitsigns.blame_line({ full = true })
