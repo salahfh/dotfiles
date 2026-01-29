@@ -41,7 +41,7 @@ return {
         gitsigns.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
       end)
 
-      map('n', '<leader>hS', gitsigns.stage_bhffer, { desc = "Gitsign: Stage buffer" })
+      map('n', '<leader>hS', gitsigns.stage_buffer)
       map('n', '<leader>hR', gitsigns.reset_buffer)
       map('n', '<leader>hp', gitsigns.preview_hunk)
       map('n', '<leader>hi', gitsigns.preview_hunk_inline, { desc = 'Gitsign: Preview one line' })
@@ -57,7 +57,7 @@ return {
       end)
 
       map('n', '<leader>hQ', function() gitsigns.setqflist('all') end)
-      map('n', '<leader>hq', gitsigns.setqflist, { desc = "Gitsign: Current document commits to quickfix" })
+      map('n', '<leader>hq', gitsigns.setqflist)
 
       -- Toggles
       map('n', '<leader>tb', gitsigns.toggle_current_line_blame)
