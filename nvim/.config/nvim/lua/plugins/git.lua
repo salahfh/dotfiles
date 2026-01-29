@@ -30,7 +30,7 @@ return {
       end)
 
       -- Actions
-      map('n', '<leader>hs', gitsigns.stage_hunk)
+      map('n', '<leader>hs', gitsigns.stage_hunk, {desc = "Git: Stage"})
       map('n', '<leader>hr', gitsigns.reset_hunk)
 
       map('v', '<leader>hs', function()
