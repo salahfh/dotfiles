@@ -35,7 +35,7 @@ return {
 
       map('v', '<leader>hs', function()
         gitsigns.stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
-      end)
+      end, { desc = "Gitsign: Stage changes" })
 
       map('v', '<leader>hr', function()
         gitsigns.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
