@@ -57,7 +57,7 @@ return {
       end)
 
       map('n', '<leader>hQ', function() gitsigns.setqflist('all') end)
-      map('n', '<leader>hq', gitsigns.setqflist)
+      map('n', '<leader>hq', gitsigns.setqflist, { desc = "Gitsign: Current document commits to quickfix" })
 
       -- Toggles
       map('n', '<leader>tb', gitsigns.toggle_current_line_blame)
