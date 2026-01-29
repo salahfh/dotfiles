@@ -113,3 +113,15 @@ vim.keymap.set("n", "<leader>gl", function()
   require('gitgraph').draw({}, { all = true, max_count = 5000 })
 end
 , { desc = "GitGraph - Draw", })
+
+
+-- SQL
+vim.keymap.set('n', "<leader>sqo", function()
+  vim.cmd.tabnew("DBUI")
+  vim.cmd("DBUI")
+end, { desc = "Start SQL UI in a new tab" })
+
+vim.keymap.set('n', "<leader>sqc", function()
+  vim.cmd("DBUIClose")
+  vim.cmd.tabclose()
+end, { desc = "Close Sql UI" })
