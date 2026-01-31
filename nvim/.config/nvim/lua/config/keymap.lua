@@ -125,3 +125,7 @@ vim.keymap.set('n', "<leader>sqc", function()
   vim.cmd("DBUIClose")
   vim.cmd.tabclose()
 end, { desc = "Close Sql UI" })
+
+vim.keymap.set('n', "<leader>sqt", function()
+  vim.cmd("DBUIToggle")
+end, { desc = "Toggle Databases drawer - Sql UI" })
