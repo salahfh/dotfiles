@@ -12,6 +12,10 @@ vim.opt.smartindent = true
 vim.opt.autoindent = true
 
 
+-- Better search
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
 -- Color Scheme options
 vim.opt.termguicolors = true
 vim.g.background = 'dark'
