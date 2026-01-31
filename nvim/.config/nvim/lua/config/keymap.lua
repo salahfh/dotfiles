@@ -129,8 +129,28 @@ end, { desc = "Close Sql UI" })
 vim.keymap.set('n', "<leader>sqt", function()
   vim.cmd("DBUIToggle")
 end, { desc = "Toggle Databases drawer - Sql UI" })
+
+
 -- Markdown
 vim.keymap.set('n', "<leader>Mr", function()
   local markdown = require('render-markdown')
   markdown.buf_toggle()
 end, { desc = "Enable markdown rendering" })
+
+
+-- Curl
+local curl = require("curl")
+curl.setup({})
+
+vim.keymap.set("n", "<leader>co", function()
+  curl.open_global_tab()
+end, { desc = "Open a curl tab with gloabl scope" })
+
+vim.keymap.set("n", "<leader>cs", function()
+  curl.create_global_collection()
+end, { desc = "Create or open a global collection with a name from user input" })
+
+vim.keymap.set("n", "<leader>fr", function()
+  -- curl.pick_global_collection()
+  telescope.find_files({ cwd = "~/.local/share/nvim/curl_cache/" })
+end, { desc = "Choose a global collection and open it" })
