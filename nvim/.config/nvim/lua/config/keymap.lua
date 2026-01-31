@@ -129,3 +129,8 @@ end, { desc = "Close Sql UI" })
 vim.keymap.set('n', "<leader>sqt", function()
   vim.cmd("DBUIToggle")
 end, { desc = "Toggle Databases drawer - Sql UI" })
+-- Markdown
+vim.keymap.set('n', "<leader>Mr", function()
+  local markdown = require('render-markdown')
+  markdown.buf_toggle()
+end, { desc = "Enable markdown rendering" })
