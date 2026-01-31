@@ -1,15 +1,15 @@
 -- Telescope
-local builtin = require('telescope.builtin')
+local telescope = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ft', "<CMD>Telescope<CR>", { desc = 'Telescope main menu' })
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
-vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Telescope Vim keymaps' })
-vim.keymap.set('n', '<leader>fc', builtin.git_commits, { desc = 'Telescope git commits keymaps' })
-vim.keymap.set('n', '<leader>fm', builtin.git_branches, { desc = 'Telescope git branches keymaps' })
+vim.keymap.set('n', '<leader>ff', telescope.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', telescope.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fb', telescope.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>fh', telescope.help_tags, { desc = 'Telescope help tags' })
+vim.keymap.set('n', '<leader>fk', telescope.keymaps, { desc = 'Telescope Vim keymaps' })
+vim.keymap.set('n', '<leader>fc', telescope.git_commits, { desc = 'Telescope git commits keymaps' })
+vim.keymap.set('n', '<leader>fm', telescope.git_branches, { desc = 'Telescope git branches keymaps' })
 vim.keymap.set("n", "<leader>fn", function()
-  builtin.find_files({
+  telescope.find_files({
     cwd = vim.fn.stdpath("config"),
     prompt_prefix = "Config > ",
   })
