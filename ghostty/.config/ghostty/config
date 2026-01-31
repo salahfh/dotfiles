@@ -1,5 +1,5 @@
 # Other options
-cursor-style = underline
+cursor-style = bar
 cursor-style-blink = true
 shell-integration-features = no-cursor
 mouse-hide-while-typing = true
