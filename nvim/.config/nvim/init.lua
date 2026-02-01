@@ -16,6 +16,12 @@ vim.opt.autoindent = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+
+-- Enable exrc (equivlant of .env)
+-- Primary used for the database plug (see 'kristijanhusak/vim-dadbod-ui')
+vim.opt.exrc = true
+
+
 -- Color Scheme options
 vim.opt.termguicolors = true
 vim.g.background = 'dark'
