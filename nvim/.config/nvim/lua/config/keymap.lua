@@ -146,8 +146,6 @@ end, { desc = "Enable markdown rendering" })
 
 -- Curl
 local curl = require("curl")
-curl.setup({})
-
 vim.keymap.set("n", "<leader>co", function()
   curl.open_global_tab()
 end, { desc = "Open a curl tab with gloabl scope" })
