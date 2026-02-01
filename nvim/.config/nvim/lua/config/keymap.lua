@@ -152,15 +152,8 @@ end, { desc = "Enable markdown rendering" })
 
 -- Curl
 local curl = require("curl")
-local curl_open = false
 vim.keymap.set("n", "<leader>co", function()
-  if not curl_open then
-    curl.open_global_tab()
-    curl_open = true
-  else
-    curl.close_curl_tab()
-    curl_open = false
-  end
+  curl.open_global_tab()
 end, { desc = "Open a curl tab with gloabl scope" })
 
 vim.keymap.set("n", "<leader>cs", function()
@@ -171,3 +164,10 @@ vim.keymap.set("n", "<leader>fr", function()
   -- curl.pick_global_collection()
   telescope.find_files({ cwd = "~/.local/share/nvim/curl_cache/" })
 end, { desc = "Choose a global collection and open it" })
+
+
+-- Close Tabbed pluggins (Universal close)
+vim.keymap.set('n', '<leader>tc', function()
+  vim.cmd.tabclose()
+  dbui_open = false
+end, { desc = "Close Tab" })
