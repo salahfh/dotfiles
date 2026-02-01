@@ -130,6 +130,9 @@ vim.keymap.set('n', "<leader>sqt", function()
   vim.cmd("DBUIToggle")
 end, { desc = "Toggle Databases drawer - Sql UI" })
 
+-- Set a local keymap only for the Dadbod UI sidebar
+vim.keymap.set('v', '<CR>', '<Plug>(DBUI_ExecuteQuery)', { desc = "Sql UI: execute query" })
+vim.keymap.set('v', '<S-CR>', '<Plug>(DBUI_ExecuteQuery)', { desc = "Sql UI: execute query" })
 
 -- Markdown
 vim.keymap.set('n', "<leader>Mr", function()
