@@ -116,19 +116,22 @@ end
 
 
 -- SQL
+local dbui_open = false
 vim.keymap.set('n', "<leader>sqo", function()
-  vim.cmd.tabnew("DBUI")
-  vim.cmd("DBUI")
-end, { desc = "Start SQL UI in a new tab" })
+  if (not dbui_open) then
+    vim.cmd.tabnew("DBUI")
+    vim.cmd("DBUI")
+    dbui_open = true
+  else
+    vim.cmd("DBUIToggle")
+  end
+end, { desc = "Start SQL UI in a new tab and toggle drawer" })
 
 vim.keymap.set('n', "<leader>sqc", function()
   vim.cmd("DBUIClose")
   vim.cmd.tabclose()
+  dbui_open = false
 end, { desc = "Close Sql UI" })
-
-vim.keymap.set('n', "<leader>sqt", function()
-  vim.cmd("DBUIToggle")
-end, { desc = "Toggle Databases drawer - Sql UI" })
 
 -- Set a local keymap only for the Dadbod UI sidebar
 vim.keymap.set('v', '<CR>', '<Plug>(DBUI_ExecuteQuery)', { desc = "Sql UI: execute query" })
