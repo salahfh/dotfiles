@@ -14,6 +14,12 @@ vim.keymap.set("n", "<leader>fn", function()
     prompt_prefix = "Config > ",
   })
 end, { desc = "Find config files" })
+vim.keymap.set("n", "<leader>fp", function()
+  telescope.find_files({
+    cwd = '/home/salah/code/notes',
+    prompt_prefix = "Notes > ",
+  })
+end, { desc = "Find config files" })
 
 
 -- Gitsignn
