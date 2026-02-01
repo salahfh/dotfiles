@@ -32,14 +32,14 @@ local logger = function(level)
   if ft == 'python' then
     logger_func = 'logger'
   elseif ft == 'lua' then
-    logger_func = 'lua_log'
+    logger_func = 'logger'
   else
-    print("logger_func function not defined for the language '" .. ft .. "'")
+    print("logger_func function not defined for the '" .. ft .. "' language.")
     return
   end
 
   -- prompt user for mssage
-  vim.ui.input({ prompt = 'Log message: ' }, function(input)
+  vim.ui.input({ prompt = '[' .. level:upper() .. ']: ' }, function(input)
     if input == nil then return end
     local line = logger_func .. '.' .. level .. '("' .. input .. '")'
     vim.cmd([[normal! o]] .. line)
