@@ -7,7 +7,7 @@ vim.keymap.set('n', '<leader>fb', telescope.buffers, { desc = 'Telescope buffers
 vim.keymap.set('n', '<leader>fh', telescope.help_tags, { desc = 'Telescope help tags' })
 vim.keymap.set('n', '<leader>fk', telescope.keymaps, { desc = 'Telescope Vim keymaps' })
 vim.keymap.set('n', '<leader>fc', telescope.git_commits, { desc = 'Telescope git commits keymaps' })
-vim.keymap.set('n', '<leader>fm', telescope.git_branches, { desc = 'Telescope git branches keymaps' })
+vim.keymap.set('n', '<leader>fm', telescope.man_pages, { desc = 'Telescope man pages' })
 vim.keymap.set("n", "<leader>fn", function()
   telescope.find_files({
     cwd = vim.fn.stdpath("config"),
