@@ -1,3 +1,11 @@
+-- ############################## Neovim Help ##############################
+-- :help user-manual
+-- :help luaref
+-- :help lua-guide
+-- :help lua
+-- ############################################################
+
+
 require("config.lazy")
 require("config.keymap")
 require("custom.autoinsert")
@@ -30,9 +38,10 @@ vim.g.gruvbox_material_background = 'soft'
 
 
 -- line numbers
+vim.opt.number = true
 vim.opt.relativenumber = true
-vim.o.cursorline = true
-vim.o.cursorlineopt = "number"
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
 
 
 -- Format on save
