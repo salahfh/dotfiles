@@ -140,8 +140,13 @@ vim.keymap.set('n', "<leader>sqc", function()
 end, { desc = "Close Sql UI" })
 
 -- Set a local keymap only for the Dadbod UI sidebar
-vim.keymap.set('v', '<CR>', '<Plug>(DBUI_ExecuteQuery)', { desc = "Sql UI: execute query" })
-vim.keymap.set('v', '<S-CR>', '<Plug>(DBUI_ExecuteQuery)', { desc = "Sql UI: execute query" })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "sql", "mysql", "plsql" },
+  callback = function()
+    vim.keymap.set('v', '<CR>', '<Plug>(DBUI_ExecuteQuery)', { desc = "Sql UI: execute query" })
+    vim.keymap.set('v', '<S-CR>', '<Plug>(DBUI_ExecuteQuery)', { desc = "Sql UI: execute query" })
+  end,
+})
 
 -- Markdown
 vim.keymap.set('n', "<leader>Mr", function()
