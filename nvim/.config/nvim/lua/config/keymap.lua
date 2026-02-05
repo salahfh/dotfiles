@@ -99,9 +99,11 @@ end, { desc = "Check LSP Health" })
 
 
 -- Diagnostics
-vim.keymap.set("n", "<leader>de", "<cmd>TinyInlineDiag enable<cr>", { desc = "Enable diagnostics" })
-vim.keymap.set("n", "<leader>dd", "<cmd>TinyInlineDiag disable<cr>", { desc = "Disable diagnostics" })
-vim.keymap.set("n", "<leader>dt", "<cmd>TinyInlineDiag toggle<cr>", { desc = "Toggle diagnostics" })
+vim.keymap.set("n", "<leader>dt", function()
+  vim.cmd("TinyInlineDiag toggle")
+  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+end, { desc = "Toggle diagnostics" })
+
 
 
 -- These GLOBAL keymaps are created unconditionally when Nvim starts:
