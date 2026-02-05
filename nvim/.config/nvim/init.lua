@@ -42,6 +42,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
+vim.opt.signcolumn = "yes:1"
 
 
 -- Format on save
