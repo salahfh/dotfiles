@@ -32,7 +32,7 @@ vim.keymap.set('n', '<leader>gd', gitsigns.toggle_deleted, { desc = 'Toggle git 
 
 
 -- Terminal
--- Start a mini termial - useful for quick git operations
+-- Start a mini terminal - useful for quick git operations
 vim.keymap.set('n', '<leader>st', function()
   vim.cmd.vnew()
   vim.cmd.term()
@@ -40,6 +40,15 @@ vim.keymap.set('n', '<leader>st', function()
   vim.api.nvim_win_set_height(0, 10)
   vim.cmd.startinsert()
 end)
+
+-- Start a tabbed terminal
+vim.keymap.set('n', '<leader>sT', function()
+  vim.cmd.vnew()
+  vim.cmd.term()
+  vim.cmd.wincmd("T")
+  vim.cmd.startinsert()
+end)
+
 
 
 -- Change to normal mode
