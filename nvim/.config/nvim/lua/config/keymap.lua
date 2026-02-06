@@ -182,3 +182,8 @@ vim.keymap.set('n', '<leader>tc', function()
   vim.cmd.tabclose()
   dbui_open = false
 end, { desc = "Close Tab" })
+
+
+-- Diffview for comparing git edits
+vim.keymap.set('n', '<leader>dvo', function() vim.cmd('DiffviewOpen') end, { desc = "Open Diff View Current file" })
+vim.keymap.set('n', '<leader>dvh', function() vim.cmd('DiffviewFileHistory') end, { desc = "Open Diff View History" })
