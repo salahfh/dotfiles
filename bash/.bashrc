@@ -14,9 +14,9 @@ alias cat='bat'
 alias focus='rfkill block wlan; echo "Focus Mode is ON"'
 alias unfocus='rfkill unblock wlan'
 # PS1='[\u@\h \W]\$ '
-. "$HOME/.cargo/env"
 
-eval $(opam env)
+# . "$HOME/.cargo/env"
+# eval $(opam env)
 
 # Add git to the prompt
 . ~/.git-prompt.sh
