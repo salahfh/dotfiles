@@ -21,6 +21,10 @@ vim.opt.smartindent = true
 vim.opt.autoindent = true
 
 
+-- clipboard
+-- Install xclip for linux
+
+
 -- Better search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true

@@ -1,3 +1,7 @@
+-- Clipboard
+vim.keymap.set('v', '<C-c>', '"+y', { desc = "Copy to OS clipboard" })
+
+
 -- Telescope
 local telescope = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ft', "<CMD>Telescope<CR>", { desc = 'Telescope main menu' })
