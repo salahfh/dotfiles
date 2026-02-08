@@ -24,6 +24,9 @@ vim.keymap.set("n", "<leader>fp", function()
     prompt_prefix = "Notes > ",
   })
 end, { desc = "Find config files" })
+vim.keymap.set('n', '<leader>fi', function()
+  telescope.find_files({ hidden = true, no_ignore = true })
+end, { desc = 'Telescope ALL files' })
 
 
 -- Gitsignn
