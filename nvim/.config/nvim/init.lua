@@ -9,6 +9,7 @@
 require("config.lazy")
 require("config.keymap")
 require("custom.autoinsert")
+require("custom.experimental")
 
 
 -- Tabs configuration
