@@ -14,4 +14,4 @@
 # END opam configuration
 # . "/home/salah/.deno/env"
 
-export PATH='/home/salah/.duckdb/cli/latest':'/home/salah/bin/fasm':$PATH
+export PATH='/home/salah/.duckdb/cli/latest':'/home/salah/bin/fasm':'/opt/bin/':$PATH
