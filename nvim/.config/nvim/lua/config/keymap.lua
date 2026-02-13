@@ -113,6 +113,8 @@ vim.keymap.set('n', '<leader>hl', function()
   vim.cmd.checkhealth "vim.lsp"
 end, { desc = "Check LSP Health" })
 
+vim.keymap.set('n', 'grd', vim.lsp.buf.definition, { desc = "LSP: go to definition" })
+vim.keymap.set('n', 'grr', vim.lsp.buf.references, { desc = "LSP: show refrences" })
 
 -- Diagnostics
 vim.keymap.set("n", "<leader>dt", function()
