@@ -2,6 +2,9 @@
 vim.keymap.set('v', '<C-c>', '"+y', { desc = "Copy to OS clipboard" })
 
 
+-- Manual Format keymap
+vim.keymap.set('n', '<M-f>', vim.lsp.buf.format, { desc = "Format documents" })
+
 -- Telescope
 local telescope = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ft', "<CMD>Telescope<CR>", { desc = 'Telescope main menu' })
