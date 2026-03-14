@@ -62,7 +62,11 @@ vim.api.nvim_create_autocmd("BufWritePre",
   })
 
 
--- Enabled LSPs
+-- LSPs
+-- 1. Install the server via :Mason
+-- 2. Copy configuration from the neovim/nvim-lspconfig repo (search by file and extension name)
+-- 3. Register the plug for loading here
 vim.lsp.enable("ty")
 vim.lsp.enable("ruff")
 vim.lsp.enable("lua_ls")
+vim.lsp.enable("oxlint")
