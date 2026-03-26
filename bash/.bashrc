@@ -36,3 +36,4 @@ alias activate=". .venv/bin/activate"
 [ -f "/home/salah/.ghcup/env" ] && . "/home/salah/.ghcup/env" # ghcup-env
 
 export HISTCONTROL=ignoreboth:erasedups
+eval "$(/home/salah/.local/bin/mise activate bash)"
