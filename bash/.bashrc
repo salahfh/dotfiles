@@ -13,6 +13,7 @@ alias vim='nvim'
 alias cat='bat'
 alias focus='rfkill block wlan; echo "Focus Mode is ON"'
 alias unfocus='rfkill unblock wlan'
+alias mupdft='mupdf -C FBF1C7 -A 8 -r 96 -c /usr/share/color/icc/colord/sRGB.icc' # FBF1C7 also good
 # PS1='[\u@\h \W]\$ '
 
 # . "$HOME/.cargo/env"
