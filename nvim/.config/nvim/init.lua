@@ -22,6 +22,10 @@ vim.opt.smartindent = true
 vim.opt.autoindent = true
 
 
+-- Spelling Chkering
+-- Enabled per file type basic (currently only for Python)
+vim.opt.spelllang = 'en_us'
+
 -- clipboard
 -- Install xclip for linux
 
