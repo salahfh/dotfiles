@@ -9,4 +9,7 @@
   autosquash = true
 
 [core]
-	editor = nvim
+  editor = nvim
+
+[init]
+  defaultBranch = "main"
