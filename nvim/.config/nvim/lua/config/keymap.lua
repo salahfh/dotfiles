@@ -117,6 +117,12 @@ vim.keymap.set('n', '<leader>hl', function()
 end, { desc = "Check LSP Health" })
 
 vim.keymap.set('n', 'grd', vim.lsp.buf.definition, { desc = "LSP: go to definition" })
+vim.keymap.set('n', 'grD', function()
+    vim.cmd.split()
+    vim.cmd.wincmd('j')
+    vim.lsp.buf.definition()
+  end,
+  { desc = "LSP: go to definition in a horizantal split window" })
 vim.keymap.set('n', 'grr', vim.lsp.buf.references, { desc = "LSP: show refrences" })
 
 -- Diagnostics
