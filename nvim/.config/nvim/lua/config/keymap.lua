@@ -143,12 +143,6 @@ end, { desc = "Toggle diagnostics" })
 -- - CTRL-S is mapped in Insert mode to |vim.lsp.buf.signature_help()|
 
 
--- Show the git graph
-vim.keymap.set("n", "<leader>gl", function()
-  require('gitgraph').draw({}, { all = true, max_count = 5000 })
-end
-, { desc = "GitGraph - Draw", })
-
 
 -- SQL
 local dbui_open = false
