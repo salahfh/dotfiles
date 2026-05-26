@@ -1,0 +1,44 @@
+#!/usr/bin/bash
+
+USAGE="
+rpl: Cheap alternative to rlwrp
+
+Usage:
+    rpl COMMAND             .e.g: rpl echo
+    rpl grep FILE_PATH
+
+Prompt: (>)
+    .h: prints this help
+    .q: quit/exits
+    _ : pass value to COMMAND
+
+"
+
+
+command=$1
+target_path=$2
+
+# Check if no args
+if [ -z "$command" ]
+then
+    echo "$USAGE"
+    exit 1
+fi
+
+while true;
+do
+    read -p '> ' input || break;
+
+    if [ "$input" == ".q" ] ;then
+        exit 0
+    elif [ "$input" == ".h" ] ;then
+        echo "$USAGE"
+    elif [ "$command" == 'grep' ]; then
+        grep -n --color=always $input $target_path
+    else
+        eval "$command" < $input
+    fi
+
+done
+
+echo ''
