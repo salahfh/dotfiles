@@ -34,9 +34,9 @@ do
     elif [ "$input" == ".h" ] ;then
         echo "$USAGE"
     elif [ "$command" == 'grep' ]; then
-        grep -n --color=always $input $target_path
+        grep -n --color=always "$input" "$target_path"
     else
-        eval "$command" < $input
+        eval "$command" < "$input"
     fi
 
 done
