@@ -58,7 +58,7 @@ end)
 
 
 -- Change to normal mode
-vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { noremap = true, desc = 'Remap escape in terminal mode' })
+vim.keymap.set('t', '<leader><Esc>', [[<C-\><C-n>]], { noremap = true, desc = 'Remap escape in terminal mode' })
 
 
 --  See `:help wincmd` for a list of all window commands
