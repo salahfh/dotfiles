@@ -15,6 +15,8 @@ config.load_autoconfig(True)
 # Tabs bar position
 c.tabs.position = "bottom"
 
+# c.tabs.background = True
+
 # Editor to use when pressing Ctrl+E on a text field (e.g., Neovim/Vim in a terminal)
 c.editor.command = ["ghostty", "-e", "nvim", "{}"]
 
@@ -81,6 +83,12 @@ config.bind("<space>w", "open http://web.archive.org/{url}")
 config.bind("<Ctrl+n>", "completion-item-focus next", mode="command")
 config.bind("<Ctrl+p>", "completion-item-focus prev", mode="command")
 
+
+config.bind(
+    "<space>yd", """spawn -v -m bash -c 'cd ~/Videos/yt && yt-dlp "$@"' _ {url}"""
+)
+
+
 # ------------------------------------------------------------------------------------------
 # Looks and Theme
 # ------------------------------------------------------------------------------------------
@@ -102,28 +110,7 @@ c.content.cookies.accept = "no-3rdparty"
 c.content.geolocation = False
 c.content.notifications.enabled = "ask"
 
-
-# --- 6. GRUVBOX DARK THEME SUITE ---
-# Clean, high-contrast Gruvbox color scheme for the UI
-bg0 = "#282828"
-bg1 = "#3c3836"
-fg0 = "#fbf1c7"
-fg1 = "#ebdbb2"
-bright_yellow = "#fabd2f"
-bright_blue = "#458588"
-bright_red = "#fb4934"
-
-c.colors.statusbar.normal.bg = bg0
-c.colors.statusbar.normal.fg = fg1
-c.colors.statusbar.command.bg = bg1
-c.colors.statusbar.command.fg = fg0
-c.colors.tabs.even.bg = bg0
-c.colors.tabs.even.fg = fg1
-c.colors.tabs.odd.bg = bg0
-c.colors.tabs.odd.fg = fg1
-c.colors.tabs.selected.even.bg = bright_blue
-c.colors.tabs.selected.even.fg = bg0
-c.colors.tabs.selected.odd.bg = bright_blue
-c.colors.tabs.selected.odd.fg = bg0
-c.colors.hints.bg = bright_yellow
-c.colors.hints.fg = bg0
+# ------------------------------------------------------------------------------------------
+# Gruvbox Theme
+# ------------------------------------------------------------------------------------------
+config.source("gruvbox.py")
