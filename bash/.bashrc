@@ -38,3 +38,11 @@ alias activate=". .venv/bin/activate"
 
 export HISTCONTROL=ignoreboth:erasedups
 eval "$(/home/salah/.local/bin/mise activate bash)"
+alias stock='/home/salah/code/python_/stock-market/.venv/bin/stock'
+export STOCK_FOLDER='/home/salah/stock'
+
+
+
+
+# Disable GDB annonying debug message accept at every run
+unset DEBUGINFOD_URLS

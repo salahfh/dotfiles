@@ -14,7 +14,7 @@
 # END opam configuration
 # . "/home/salah/.deno/env"
 
-export PATH='/home/salah/.duckdb/cli/latest':'/home/salah/bin/fasm':'/opt/bin/':'/home/salah/.local/bin':$PATH
+export PATH='/home/salah/bin/':'/home/salah/.duckdb/cli/latest':'/home/salah/bin/fasm':'/opt/bin/':'/home/salah/.local/bin':'/home/salah/code/c_/tiny/out':$PATH
 
 # Load git completions
 source /usr/share/bash-completion/completions/git
