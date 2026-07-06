@@ -1,3 +1,7 @@
+# Excellent resources
+# https://www.ii.com/qutebrowser-configpy/
+
+
 from qutebrowser.config.configfiles import ConfigAPI  # type:ignore
 from qutebrowser.config.config import ConfigContainer  # type:ignore
 
@@ -64,7 +68,6 @@ config.bind("gt", "tab-next")
 
 # Use 't' to open a new tab with the default page (instead of 'gT')
 config.bind("t", "open -t")
-
 
 # Spawn an external video player (like mpv) with ',m'
 config.bind("<space>m", "spawn mpv {url}")
