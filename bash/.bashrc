@@ -46,3 +46,6 @@ export STOCK_FOLDER='/home/salah/stock'
 
 # Disable GDB annonying debug message accept at every run
 unset DEBUGINFOD_URLS
+
+export MANROFFOPT="-c"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
