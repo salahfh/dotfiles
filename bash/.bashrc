@@ -10,14 +10,13 @@ alias la='ls -a --color=auto'
 alias ll='ls -hl --color=auto'
 alias vi='nvim'
 alias vim='nvim'
+alias grep='grep -E --color'
 alias cat='bat'
 alias focus='rfkill block wlan; echo "Focus Mode is ON"'
 alias unfocus='rfkill unblock wlan'
 alias mupdft='mupdf -C FBF1C7 -A 8 -r 96 -c /usr/share/color/icc/colord/sRGB.icc' # FBF1C7 also good
-# PS1='[\u@\h \W]\$ '
-
-# . "$HOME/.cargo/env"
-# eval $(opam env)
+alias book='mupdft "$(fzf --walker-root=/home/salah/Books)"'
+alias goto='todo'
 
 # Add git to the prompt
 . ~/.git-prompt.sh
@@ -35,11 +34,10 @@ alias activate=". .venv/bin/activate"
 [ -f "/home/salah/.ghcup/env" ] && . "/home/salah/.ghcup/env" # ghcup-env
 
 export HISTCONTROL=ignoreboth:erasedups
-eval "$(/home/salah/.local/bin/mise activate bash)"
+# eval "$(/home/salah/.local/bin/mise activate bash)"
 alias stock='/home/salah/code/python_/stock-market/.venv/bin/stock'
 export STOCK_FOLDER='/home/salah/stock'
-
-
+alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 
 # Disable GDB annonying debug message accept at every run
