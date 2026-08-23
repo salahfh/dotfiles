@@ -23,8 +23,6 @@ alias mupdft='mupdf -C FBF1C7 -A 8 -r 96 -c /usr/share/color/icc/colord/sRGB.icc
 . ~/.git-prompt.sh
 . ~/.command-shortcuts.sh
 
-# Git
-PROMPT_COMMAND='__git_ps1 "[\u@\h \w" "]\$ "'
 
 # fzf
 eval "$(fzf --bash)"
@@ -49,3 +47,16 @@ unset DEBUGINFOD_URLS
 
 export MANROFFOPT="-c"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+update_bash_prompt() {
+    local guix_tag=""
+    if [ -n "$GUIX_ENVIRONMENT" ]; then
+        guix_tag=" [env]"
+    fi
+
+    # Call __git_ps1, passing the custom prefix that includes the guix_tag
+    __git_ps1 "[\u@\h \W${guix_tag}" "]\$ "
+}
+
+# Set the shell prompt
+PROMPT_COMMAND=update_bash_prompt
