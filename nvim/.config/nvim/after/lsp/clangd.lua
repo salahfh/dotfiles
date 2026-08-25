@@ -65,6 +65,9 @@ end
 return {
   cmd = { 'clangd' },
   filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' },
+  -- init_options = {
+  --   fallbackFlags = { '-std=c23' }
+  -- },
   root_markers = {
     '.clangd',
     '.clang-tidy',
