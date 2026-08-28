@@ -17,6 +17,7 @@ alias unfocus='rfkill unblock wlan'
 alias mupdft='mupdf -C FBF1C7 -A 8 -r 96 -c /usr/share/color/icc/colord/sRGB.icc' # FBF1C7 also good
 alias book='mupdft "$(fzf --walker-root=/home/salah/Books)"'
 alias goto='todo'
+alias info='info --vi-keys'
 
 # Add git to the prompt
 . ~/.git-prompt.sh
@@ -58,3 +59,8 @@ update_bash_prompt() {
 
 # Set the shell prompt
 PROMPT_COMMAND=update_bash_prompt
+
+# GUILE LSP
+GUIX_PROFILE="/home/salah/.guix-profile"
+. "$GUIX_PROFILE/etc/profile"
+unset GUIX_PROFILE
