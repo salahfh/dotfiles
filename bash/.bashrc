@@ -24,6 +24,9 @@ alias info='info --vi-keys'
 . ~/.command-shortcuts.sh
 
 
+export EDITOR="nvim"
+export VISUAL="nvim"
+
 # fzf
 eval "$(fzf --bash)"
 
