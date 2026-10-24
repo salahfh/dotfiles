@@ -309,7 +309,7 @@ animations {
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 3.0
+    // slowdown 1
 }
 
 // Window rules let you adjust behavior for individual windows.
@@ -352,6 +352,13 @@ window-rule {
 /-window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
+}
+
+// firefox window rule
+window-rule {
+    // Set open-maximized to true for all windows.
+    match app-id="firefox"
+    open-maximized true
 }
 
 binds {
