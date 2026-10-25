@@ -51,19 +51,14 @@ export MANROFFOPT="-c"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 update_bash_prompt() {
-    local guix_tag=""
-    if [ -n "$GUIX_ENVIRONMENT" ]; then
-        guix_tag=" [env]"
+    local nix_tag=""
+    if [ -n "$IN_NIX_SHELL" ] || [ -n "$NIX_SHLVL" ]; then
+        nix_tag=" [nix]"
     fi
 
     # Call __git_ps1, passing the custom prefix that includes the guix_tag
-    __git_ps1 "[\u@\h \W${guix_tag}" "]\$ "
+    __git_ps1 "[\u@\h \W${nix_tag}" "]\$ "
 }
 
 # Set the shell prompt
 PROMPT_COMMAND=update_bash_prompt
-
-# GUILE LSP
-GUIX_PROFILE="/home/salah/.guix-profile"
-. "$GUIX_PROFILE/etc/profile"
-unset GUIX_PROFILE
