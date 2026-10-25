@@ -27,7 +27,9 @@ vim.opt.autoindent = true
 vim.opt.spelllang = 'en_us'
 
 -- clipboard
--- Install xclip for linux
+-- sudo pacman -S wl-clipboard
+vim.opt.clipboard = "unnamedplus"
+
 
 
 -- Better search
