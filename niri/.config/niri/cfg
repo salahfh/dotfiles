@@ -1,0 +1,112 @@
+#!/usr/bin/bash
+
+set -Eeuo pipefail
+
+cmd_usage()
+{
+    cat << EOF
+usage: $(basename "$0") <command> [options]
+utility to create a shortcut to manage all configuration for niri.
+
+Available Commands:
+    time        show current time and date
+    wifi        configure a new wifi
+    vol         current valume level
+    volup       adjust the volume up
+    voldown     adjust the volume down
+    light       adjust brightness
+    bat         get battery percentage
+    audio       select output audio device
+
+Run '$(basename "$0") <command> --help' for more information on a specific command.
+
+EOF
+}
+
+cmd_light()
+{
+    echo 'TODO: configure brightness'
+}
+
+cmd_vol()
+{
+    if [[ $@ == 'up' ]]; then
+        pactl set-sink-volume @DEFAULT_SINK@ +5%
+    elif [[ $@ == 'down' ]]; then
+        pactl set-sink-volume @DEFAULT_SINK@ -5%
+    else
+        echo "Volume level: $(pactl get-sink-volume @DEFAULT_SINK@ | awk -F '/' '{print $2}' | tr -d ' ')"
+    fi
+}
+
+cmd_wifi()
+{
+    ghostty -e nmtui
+}
+
+cmd_battery()
+{
+    acpi -b
+}
+
+_get_options()
+{
+    mapfile -t lines < <(cmd_usage)
+
+    for line in "${lines[@]}"; do
+        if [[ "$line" =~ ^$'   ' ]]; then
+            echo "$line"
+        fi
+    done
+
+}
+
+
+
+choice=$(fuzzel --dmenu <<< "$(_get_options)" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
+
+if [ -z "$choice" ]; then
+    exit 0
+fi
+
+action=$(echo "$choice" | awk '{print $1}')
+
+result_output=
+case "$action" in
+    time)
+        result_output=$(date)
+        ;;
+    wifi)
+        result_output=$(cmd_wifi "$@")
+        ;;
+    vol)
+        result_output=$(cmd_vol $@)
+        ;;
+    volup)
+        result_output=$(cmd_vol "up")
+        ;;
+    voldown)
+        result_output=$(cmd_vol "down")
+        ;;
+    light)
+        result_output=$(cmd_light "$@")
+        ;;
+    bat)
+        result_output=$(cmd_battery "$@")
+        ;;
+    audio)
+        result_output=$(echo 'TODO: select audio device for output')
+        ;;
+    help|-h|--help)
+        cmd_usage
+        ;;
+    *)
+        exit 1
+        ;;
+esac
+
+
+# If the command successfully returned an output, display it in a second Fuzzel window
+if [ -n "$result_output" ]; then
+    fuzzel --dmenu --prompt="Result ($action): " <<< "$result_output"
+fi
