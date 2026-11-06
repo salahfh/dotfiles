@@ -383,6 +383,7 @@ binds {
     // Mod-Shift-/, which is usually the same as Mod-?,
     // shows a list of important hotkeys.
     Mod+P { spawn-sh "~/.config/niri/cfg"; }
+    Mod+B hotkey-overlay-title="Book search" { spawn-sh "~/.config/niri/book"; }
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
